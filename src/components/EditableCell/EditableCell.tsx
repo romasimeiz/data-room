@@ -15,6 +15,7 @@ export const EditableCell = ({
   isEditing,
   editingName,
   onSaveEditingName,
+  onDoubleClick,
 }: EditableCellProps) => {
   const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = e => {
     if (e.key === 'Enter' || e.key === 'Escape') {
@@ -44,9 +45,9 @@ export const EditableCell = ({
       <div className="flex items-center gap-2 min-h-[30px]">
         <div className="flex-shrink-0">
           {fileSystemItem.type === NodeTypeEnum.Folder ? (
-            <FolderIcon size={16} />
+            <FolderIcon className="cursor-pointer" onDoubleClick={onDoubleClick} size={16} />
           ) : (
-            <FileIcon size={16} />
+            <FileIcon className="cursor-pointer" onDoubleClick={onDoubleClick} size={16} />
           )}
         </div>
         <div className="flex-1 min-w-0">
@@ -64,6 +65,7 @@ export const EditableCell = ({
             />
           ) : (
             <span
+              onDoubleClick={onDoubleClick}
               onClick={handleNameClick}
               className="cursor-pointer select-none block truncate text-sm leading-5"
               title={fileSystemItem.name}

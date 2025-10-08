@@ -116,8 +116,9 @@ export default function Explorer({ parentId }: ExplorerProps) {
         {items.map((item: FileSystemItem) => {
           const isEditing = editingId === item.id
           return (
-            <TableRow className="group" onDoubleClick={handleDoubleClick(item)} key={item.id}>
+            <TableRow className="group" key={item.id}>
               <EditableCell
+                onDoubleClick={handleDoubleClick(item)}
                 fileSystemItem={item}
                 isEditing={isEditing}
                 cancelEditing={cancelEditing}

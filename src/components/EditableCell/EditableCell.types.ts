@@ -9,4 +9,5 @@ export type EditableCellProps = {
   isEditing: boolean
   editingName: string
   onSaveEditingName: (name: string) => void
+  onDoubleClick: () => void
 }

@@ -45,7 +45,7 @@ export default function CreateItemPopover() {
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger className="mb-3" asChild>
-        <Button className="rounded-full" variant="outline" size="icon-lg">
+        <Button className="rounded-full cursor-pointer" variant="outline" size="icon-lg">
           <PlusIcon />
         </Button>
       </PopoverTrigger>
@@ -54,14 +54,14 @@ export default function CreateItemPopover() {
         onClick={handlePopoverClick}
       >
         <Button
-          className="flex gap-2 w-full justify-between"
+          className="flex gap-2 w-full justify-between cursor-pointer"
           onClick={handleCreateFolder}
           variant="ghost"
         >
           Folder <FolderIcon />
         </Button>
         <Button
-          className="flex gap-2 w-full justify-between"
+          className="flex gap-2 w-full justify-between cursor-pointer"
           variant="ghost"
           onClick={handleFileUpload}
         >
